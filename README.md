@@ -13,10 +13,11 @@ TextUtils is a simple text application that can help you manipulate your text in
 To use TextUtils, follow these steps:
 
 1. Clone the repository or download the source code.
-2. Open the TextUtils application in your preferred web browser.
-3. Enter or paste the text you want to manipulate or analyze into the text input field.
-4. Select the desired text manipulation or analysis options.
-5. Click the desired buttons to see the results.
+2. Install NPM and run npm install in root directory of project to include node dependencies
+3. Open the TextUtils application in your preferred web browser.
+4. Enter or paste the text you want to manipulate or analyze into the text input field.
+5. Select the desired text manipulation or analysis options.
+6. Click the desired buttons to see the results.
 
 ## Contributing
 
