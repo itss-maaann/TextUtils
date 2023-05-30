@@ -85,7 +85,6 @@ export default function TextForm(props) {
 
     return (
         <div className="container my-3" style={{color : props.theme === 'light' ? '#042743' : 'white'}}>
-            <div className="container my-2">
                 <h1>{props.heading}</h1>
                 <div className="mb-3">
                     <textarea className="form-control" value={text} onChange={handleChange} id="myBox" rows={8}
@@ -120,7 +119,6 @@ export default function TextForm(props) {
                         Clear Text
                     </button>
                 </div>
-            </div>
             <div className="container my-2">
                 <h2>Your Text Summary</h2>
                 {wordCount > 0 ? (
