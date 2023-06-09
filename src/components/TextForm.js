@@ -53,11 +53,9 @@ export default function TextForm(props) {
     };
 
     const copyText = () => {
-        var text = document.getElementById('myBox');
-          text.select();
-          navigator.clipboard.writeText(text.value);
-          props.showAlert("success", "Text copied successfully");
-        }
+        navigator.clipboard.writeText(text);
+        props.showAlert("success", "Text copied successfully");
+    }
 
     const clearText = () => {
         setText("");
@@ -88,34 +86,33 @@ export default function TextForm(props) {
                 <h1>{props.heading}</h1>
                 <div className="mb-3">
                     <textarea className="form-control" value={text} onChange={handleChange} id="myBox" rows={8}
-                    style={{backgroundColor : props.theme === 'light' ? 'white' : 'grey',
-                    color : props.theme === 'light' ? '#042743' : 'white',
-                    caretColor: props.theme === 'light' ? '#042743' : 'white'}} />
+                    style={{backgroundColor : props.theme === 'light' ? 'white' : '#13466e',
+                    color : props.theme === 'light' ? '#042743' : 'white'}} />
                 </div>
                 <div className="d-flex">
-                    <button className="btn btn-primary mx-1" onClick={convertToUpperCase}>
+                    <button disabled={text.length === 0} className="btn btn-primary mx-1 my-1" onClick={convertToUpperCase}>
                         Convert to Uppercase
                     </button>
-                    <button className="btn btn-info mx-1" onClick={convertToLowerCase}>
+                    <button disabled={text.length === 0} className="btn btn-info mx-1 my-1" onClick={convertToLowerCase}>
                         Convert to Lowercase
                     </button>
-                    <button className="btn btn-success mx-1" onClick={convertToTitleCase}>
+                    <button disabled={text.length === 0} className="btn btn-success mx-1 my-1" onClick={convertToTitleCase}>
                         Convert to TitleCase
                     </button>
                     {!isSpeaking && (
-                        <button className="btn btn-warning mx-2" onClick={speakText}>
+                        <button disabled={text.length === 0} className="btn btn-warning mx-1 my-1" onClick={speakText}>
                             Speak
                         </button>
                     )}
                     {isSpeaking && (
-                        <button className="btn btn-danger mx-2" onClick={stopSpeaking}>
+                        <button disabled={text.length === 0} className="btn btn-danger mx-1 my-1" onClick={stopSpeaking}>
                             Stop Speaking
                         </button>
                     )}
-                    <button className="btn btn-primary mx-1" onClick={copyText}>
+                    <button disabled={text.length === 0} className="btn btn-primary mx-1 my-1" onClick={copyText}>
                         Copy Text
                     </button>
-                    <button className="btn btn-dark mx-1" onClick={clearText}>
+                    <button className="btn btn-dark mx-1 my-1" onClick={clearText}>
                         Clear Text
                     </button>
                 </div>
